@@ -1,9 +1,8 @@
-package eu.dimalex.afisha.provider;
+package eu.dimalex.news.provider;
 
-import eu.dimalex.afisha.provider.NewsContract.Events;
-import eu.dimalex.afisha.provider.NewsContract.Favourites;
-import eu.dimalex.afisha.provider.NewsContract.Places;
-import eu.dimalex.afisha.provider.NewsDatabase.ITables;
+import eu.dimalex.news.provider.NewsContract.Events;
+import eu.dimalex.news.provider.NewsContract.Favourites;
+import eu.dimalex.news.provider.NewsContract.Places;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
@@ -12,8 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 
 public class NewsProvider extends ContentProvider{
-
-	private static final UriMatcher sUriMatcher = buildUriMatcher();
+private static final UriMatcher sUriMatcher = buildUriMatcher();
 	
 	private static final int EVENTS = 50;
 	private static final int PLACES = 100;

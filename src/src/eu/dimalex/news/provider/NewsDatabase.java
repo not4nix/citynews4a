@@ -1,8 +1,8 @@
-package eu.dimalex.afisha.provider;
+package eu.dimalex.news.provider;
 
-import eu.dimalex.afisha.provider.NewsContract.Events;
-import eu.dimalex.afisha.provider.NewsContract.Favourites;
-import eu.dimalex.afisha.provider.NewsContract.Places;
+import eu.dimalex.news.provider.NewsContract.Events;
+import eu.dimalex.news.provider.NewsContract.Favourites;
+import eu.dimalex.news.provider.NewsContract.Places;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -13,28 +13,18 @@ public class NewsDatabase extends SQLiteOpenHelper{
 	private static final String DATABASE_NAME = "news.db";
 	private static final int DATABASE_VERSION = 1;
 	
-	public NewsDatabase(Context context, String name, CursorFactory factory,
-			int version) {
-		super(context, name, factory, version);
-		// TODO Auto-generated constructor stub
-	} 
-	
 	public NewsDatabase(Context context){
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 	
-	public interface ITables {
-		String EVENTS = "events";
-		String PLACES = "places";
-		String FAVOURITES = "favourites";
+	public NewsDatabase(Context context, String name, CursorFactory factory,
+			int version) {
+		super(context, name, factory, version);
+		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-//		db.execSQL("create table " + INewsDatabaseTables.EVENTS + "(_id integer primary key autoincrement," +
-//				"eventName text not null, date text not null, unique("+Events.ID+") ON CONFLICT REPLACE");
-//		db.execSQL("create table " + INewsDatabaseTables.PLACES + "(_id integer primary key autoincrement," +
-//				"name text not null,eventName text not null, unique("+Places.ID+") ON CONFLICT REPLACE");
 		db.execSQL(CREATE_TABLE_EVENTS);
 		db.execSQL(CREATE_TABLE_PLACES);
 		db.execSQL(CREATE_TABLE_FAVOURITES);
