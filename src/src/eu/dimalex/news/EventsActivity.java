@@ -33,7 +33,7 @@ public class EventsActivity extends ListActivity{
 		if((numResults <= 0)){
         	Toast.makeText(EventsActivity.this, "Not found", Toast.LENGTH_LONG).show();  
         	finish();
-        }
+                }
 		NodeList nodes = doc.getElementsByTagName("result");
 		for (int i = 0; i < nodes.getLength(); i++) {							
 			HashMap<String, String> map = new HashMap<String, String>();	
@@ -49,10 +49,10 @@ public class EventsActivity extends ListActivity{
                 new int[] { R.id.item_title, R.id.item_subtitle });
 		setListAdapter(adapter);
 		final ListView lv = getListView();
-        lv.setTextFilterEnabled(true);	
-        lv.setOnItemClickListener(new OnItemClickListener() {
+                lv.setTextFilterEnabled(true);	
+                lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {        		
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id)       {        		
         		@SuppressWarnings("unchecked")
 				HashMap<String, String> o = (HashMap<String, String>) lv.getItemAtPosition(position);	        		
         		Toast.makeText(EventsActivity.this, "ID '" + o.get("id") + "' was clicked.", Toast.LENGTH_LONG).show();
