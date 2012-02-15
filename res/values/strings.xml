@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, City4aActivity!</string>
-    <string name="app_name">City4a</string>
-    <string name="MainLabel">Afisha gorod.dp.ua</string>
-    <string name="eventString">Events</string>
-    <string name="placesString">Places</string>
-    <string name="favouritesString">Favourites</string>
-    <string name="btnRefreshString">Refresh</string>
+    <string name="hello">Hello World, CityLifeActivity!</string>
+    <string name="app_name">CityLife</string>
+    <string name="tvNews">News gorod.dp.ua</string>
+    <string name="tvEvents">Events</string>
+    <string name="tvPlaces">Places</string>
+    <string name="tvFavourites">Favourites</string>
+    <string name="btnRefresh">Refresh</string>
+    <string name="avl_places">Available places</string>
 </resources>

@@ -6,83 +6,86 @@
     >
     <TextView 
        android:layout_height="wrap_content" 
-       android:layout_gravity="center_horizontal" 
        android:layout_width="wrap_content" 
-       android:text="@string/MainLabel" android:id="@+id/mainText" 
-       android:typeface="normal">
-    </TextView>
+       android:textAppearance="?android:attr/textAppearanceMedium" 
+       android:id="@+id/tvNews" 
+       android:layout_gravity="center_horizontal" 
+       android:text="@string/tvNews"></TextView>
     <RelativeLayout 
-        android:layout_width="match_parent" 
-        android:layout_height="match_parent" 
-        android:id="@+id/rlayout">
+       android:layout_width="match_parent" 
+       android:layout_height="match_parent" android:id="@+id/relLayout">
         <ImageView 
-           android:layout_height="wrap_content" 
            android:layout_width="wrap_content" 
+           android:layout_height="wrap_content" 
            android:src="@drawable/icon" 
            android:layout_alignParentTop="true" 
            android:layout_alignParentLeft="true" 
-           android:id="@+id/imEvents" android:clickable="true">
-        </ImageView>
+           android:id="@+id/im_Events">
+         </ImageView>
         <TextView 
-           android:layout_height="wrap_content" 
            android:layout_width="wrap_content" 
-           android:layout_below="@+id/imEvents" 
-           android:layout_alignParentLeft="true" 
+           android:layout_height="wrap_content" 
            android:id="@+id/tvEvents" 
-           android:text="@string/eventString">
+           android:layout_below="@+id/im_Events" 
+           android:layout_alignParentLeft="true" 
+           android:text="@string/tvEvents">
+        </TextView>
+        <TextView 
+           android:layout_width="wrap_content" 
+           android:layout_height="wrap_content" 
+           android:layout_alignBaseline="@+id/tvEvents" 
+           android:layout_alignBottom="@+id/tvEvents" 
+           android:layout_alignLeft="@+id/im_Places" 
+           android:id="@+id/tvPlaces" 
+           android:text="@string/tvPlaces">
         </TextView>
         <ImageView 
-           android:layout_height="wrap_content" 
+           android:id="@+id/im_Places" 
            android:layout_width="wrap_content" 
+           android:maxWidth="160dp" 
+           android:maxHeight="150dp" 
+           android:layout_height="wrap_content" 
            android:src="@drawable/icon" 
-           android:layout_alignParentTop="true" 
-           android:layout_alignParentRight="true" 
-           android:layout_marginRight="103dp" 
-           android:id="@+id/imPlaces" 
+           android:layout_above="@+id/tvEvents" 
+           android:layout_toRightOf="@+id/im_Events" 
+           android:layout_marginLeft="54dp" 
            android:clickable="true">
         </ImageView>
-        <TextView 
-           android:layout_height="wrap_content" 
-           android:layout_width="wrap_content" 
-           android:layout_below="@+id/imPlaces" 
-           android:layout_alignLeft="@+id/imPlaces" 
-           android:id="@+id/tvPlaces" 
-           android:text="@string/placesString">
-        </TextView>
         <ImageView 
-           android:layout_height="wrap_content" 
            android:layout_width="wrap_content" 
+           android:layout_height="wrap_content" 
            android:src="@drawable/icon" 
-           android:layout_below="@+id/tvEvents" 
-           android:layout_alignParentLeft="true" 
-           android:layout_marginTop="16dp" 
+           android:layout_alignParentTop="true" 
+           android:layout_toRightOf="@+id/im_Places" 
+           android:layout_marginLeft="60dp" 
            android:id="@+id/imFavourites" 
            android:clickable="true">
         </ImageView>
         <TextView 
-           android:layout_height="wrap_content" 
            android:layout_width="wrap_content" 
-           android:layout_below="@+id/imFavourites" 
-           android:layout_alignParentLeft="true" 
+           android:layout_height="wrap_content" 
+           android:layout_alignBaseline="@+id/tvPlaces" 
+           android:layout_alignBottom="@+id/tvPlaces" 
+           android:layout_alignLeft="@+id/imFavourites" 
            android:id="@+id/tvFavourites" 
-           android:text="@string/favouritesString">
+           android:text="@string/tvFavourites">
         </TextView>
-        <Button 
-           android:layout_height="wrap_content" 
-           android:layout_width="match_parent" 
-           android:id="@+id/btnRefresh" 
-           android:text="@string/btnRefreshString" 
-           android:layout_below="@+id/tvFavourites" 
-           android:layout_alignParentLeft="true" 
-           android:layout_marginTop="110dp">
-        </Button>
         <ProgressBar 
-           android:layout_height="wrap_content" 
            android:layout_width="wrap_content" 
-           android:layout_below="@+id/btnRefresh" 
-           android:layout_alignParentLeft="true" 
-           android:layout_marginTop="51dp" 
-           android:id="@+id/progressBarRefresh">
+           android:id="@+id/pb_loading" 
+           android:layout_height="wrap_content" 
+           android:layout_alignParentBottom="true" 
+           android:layout_toLeftOf="@+id/im_Places" 
+           android:layout_marginBottom="62dp">
         </ProgressBar>
+        <Button 
+           android:id="@+id/btnRefresh" 
+           android:layout_width="150dp" 
+           android:layout_height="wrap_content" 
+           android:text="@string/btnRefresh" 
+           android:layout_above="@+id/pb_loading" 
+           android:layout_toLeftOf="@+id/imFavourites" 
+           android:layout_marginBottom="14dp">
+       </Button>
     </RelativeLayout>
 </LinearLayout>
